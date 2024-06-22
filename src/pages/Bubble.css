@@ -1,0 +1,210 @@
+/* Bubble.css */
+
+.big-bubble-container {
+  position: relative;
+  width: 850px; /* Adjust width of the container */
+  height: 700px; /* Adjust height of the container */
+  border: 2px solid #ccc; /* Add border for visual clarity */
+  border-radius: 10px; /* Add border radius for rounded corners */
+  background-color: #2FC1FF; /* Change container background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden; /* Prevent bubbles from going outside the container */
+}
+
+.big-bubble {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px; /* Adjust size of the big bubble */
+  height: 150px; /* Adjust size of the big bubble */
+  border-radius: 50%;
+  background-color: #f1f1f1; /* Change bubble background color */
+  color: #000000; /* Change font color */
+  font-size: 20px; /* Adjust font size */
+}
+
+.big-bubble span {
+  text-align: center; /* Center the text horizontally */
+}
+
+.big-bubble-1 {
+  animation: bubble-move-1 10s infinite alternate;
+}
+
+.big-bubble-2 {
+  animation: bubble-move-2 10s infinite alternate;
+}
+
+.big-bubble-3 {
+  animation: bubble-move-3 10s infinite alternate;
+}
+
+.big-bubble-4 {
+  animation: bubble-move-4 10s infinite alternate;
+}
+.big-bubble-5 {
+  animation: bubble-move-5 10s infinite alternate;
+}
+
+.big-bubble-7 {
+  animation: bubble-move-7 10s infinite alternate;
+}
+
+@keyframes bubble-move-1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(50px, 50px); /* Adjust movement distance */
+  }
+  40% {
+    transform: translate(0, 0);
+  }
+  60% {
+    transform: translate(-50px, -50px); /* Adjust movement distance */
+  }
+  80% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes bubble-move-2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-80px, 80px); /* Adjust movement distance */
+  }
+  40% {
+    transform: translate(0, 0);
+  }
+  60% {
+    transform: translate(80px, -80px); /* Adjust movement distance */
+  }
+  80% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes bubble-move-3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(80px, -80px); /* Adjust movement distance */
+  }
+  40% {
+    transform: translate(0, 0);
+  }
+  60% {
+    transform: translate(-80px, 80px); /* Adjust movement distance */
+  }
+  80% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes bubble-move-4 {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-80px, -80px); /* Adjust movement distance */
+  }
+  40% {
+    transform: translate(0, 0);
+  }
+  60% {
+    transform: translate(80px, 80px); /* Adjust movement distance */
+  }
+  80% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes bubble-move-5 {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-50px, -50px); /* Adjust movement distance */
+  }
+  40% {
+    transform: translate(0, 0);
+  }
+  60% {
+    transform: translate(50px, 50px); /* Adjust movement distance */
+  }
+  80% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes bubble-move-7 {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-50px, -50px); /* Adjust movement distance */
+  }
+  40% {
+    transform: translate(0, 0);
+  }
+  60% {
+    transform: translate(50px, 50px); /* Adjust movement distance */
+  }
+  80% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .big-bubble-container {
+    margin-top: 20px;
+    width: 90%; /* Adjust width of the container for mobile */
+    max-width: 400px; /* Set maximum width to prevent container from becoming too wide */
+    height: 500px; /* Allow height to adjust based on content */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 10px; /* Add padding for spacing */
+    display: flex;
+    margin-right: 25px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .big-bubble {
+    width: 100px; /* Adjust size of the big bubble for mobile */
+    height: 100px; /* Adjust size of the big bubble for mobile */
+    font-size: 16px; /* Adjust font size for mobile */
+  }
+
+  .big-bubble-1,
+  .big-bubble-2,
+  .big-bubble-3,
+  .big-bubble-4,
+  .big-bubble-5,
+  .big-bubble-7 {
+    animation-duration: 20s; /* Adjust animation duration for mobile */
+  }
+}

@@ -1,0 +1,237 @@
+.booking-table-container {
+  max-width: 100%;
+  overflow-x: auto;
+  position: relative;
+  background-image: url(../assets/img/bg1.jpg);
+}
+
+.booking-table {
+  overflow-y: hidden; /* Hide vertical overflow */
+}
+
+tbody {
+  max-height: 400px; /* Set a fixed height for the table body */
+  overflow-y: auto; /* Add vertical scrollbar when necessary */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+td {
+  padding: 4px;
+  border: 2px solid #ddd;
+  text-align: left;
+  font-size: 13px;
+}
+
+th {
+  /* background-color: #f2f2f2; */
+  border: 2px solid #ddd;
+  color: #333;
+  text-align: left;
+  font-size: 13px;
+  padding: 4px;
+}
+
+.edit-button,
+.delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  color: #007bff;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 4px 12px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}
+.pagination button.active {
+  background-color: #906e6e;
+  color: white;
+}
+/*searchbar*/
+.booking-table-container {
+  text-align: center;
+}
+
+.search-box {
+  margin-bottom: 20px;
+  background-color: #584a4a;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 10px;
+  position: relative; 
+}
+
+.search-box input {
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #020202;
+  font-size: 16px;
+  width: 250px;
+}
+.search-box ::placeholder {
+  color: #020202;
+  font-size:12.8px;
+  }
+.error-message12 {
+  color: red;
+  font-weight: bold;
+  font-size:x-large;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #ffe5e5;
+  padding: 10px;
+  border-radius: 5px;
+}
+.clear-button {
+  background-color: #f44336; /* Red background color */
+  color: white; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px 10px; /* Reduced padding */
+  cursor: pointer; /* Cursor style */
+  margin-right: 12px; 
+  margin-left: 8px; /* Margin to separate from the date picker */
+}
+
+.clear-button:hover {
+  background-color: #db4436; /* Darker red on hover */
+}
+/* BookingTable.css */
+
+/* Styles for the add button */
+.booking-table-container {
+  position: relative; /* Position relative for absolute positioning */
+}
+
+
+.add-button {
+  background-color: #4caf50; 
+  border: none;
+  border: 1px solid #4caf50;
+  border-radius: 5px; 
+  color: white;
+  padding: 10px 20px;
+  font-size: bold;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+
+/* Styles for the close button */
+.close-button11 {
+  background-color: #f44336; /* Red */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Styles for the registration container */
+.registration-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 50px auto; /* Center horizontally and provide top margin for vertical centering */
+  max-width: 80%; /* Limit maximum width for better responsiveness */
+  background-color: #ccc;
+  text-align: center;
+  width: 40%;
+}
+
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+  .search-box ::placeholder {
+    color: #020202;
+    font-size:15px;
+    width: 90%;
+    }
+  .search-box {
+    margin-bottom: 20px;
+    background-color:#2FC1FF;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px;
+    width: 90%; 
+  }
+
+  .search-box input {
+    margin-top: 10px;
+    width: 90%; /* Make input fields fill the width */
+    margin-right: 0; /* Remove right margin */
+  }
+  .clear-button {
+    background-color: #f44336; /* Red background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Reduced padding */
+    cursor: pointer; /* Cursor style */
+    margin-top: 10px;
+    margin-right: 12px; 
+    margin-left: 8px; /* Margin to separate from the date picker */
+  }
+  .registration-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 2px;
+    margin: 10px auto; /* Center horizontally and provide top margin for vertical centering */
+    max-width: 100%; /* Limit maximum width for better responsiveness */
+    background-color: #ccc;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .add-button {
+    margin-bottom: 30px;
+  }
+  .close-button {
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+}

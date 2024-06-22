@@ -1,0 +1,127 @@
+
+.bg{
+background-color: rgba(152, 161, 161, 0.873);
+background-image: url(../assets/img/bg1.jpg);
+
+}
+.gallery-container5 {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+ 
+}
+
+.category-names5 {
+  display: flex;
+  justify-content: center;
+  padding-top: 35px;
+  margin-bottom: 25px;
+  gap: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.category-names5 span {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.category-names5 span.active5 {
+  color: #2FC1FF;
+}
+
+.category-names5 span:hover {
+  color: #0056ac;
+}
+
+.gallery5 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  justify-content: center;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.gallery5.exiting {
+  opacity: 0;
+  transform: scale(0.2);
+}
+
+.gallery5.entering {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gallery5.initial-load,
+.category-names5.initial-load {
+  animation: slideInFromBottom 0.9s ease;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-container5 {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.image-container5:hover {
+  transform: rotate(5deg) scale(1).2;
+}
+
+.gallery-image5 {
+  width: 98%;
+  height: 98%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.image-container5:hover .gallery-image5 {
+  transform: rotate(-5deg);
+  filter: brightness(1.2);
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .gallery-container5 {
+    width: 90%;
+  }
+
+  .category-names5 {
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 16px;
+  }
+
+  .gallery5 {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-container5 {
+    width: 95%;
+  }
+
+  .category-names5 {
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .gallery5 {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+}

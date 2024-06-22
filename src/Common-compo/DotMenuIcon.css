@@ -1,0 +1,67 @@
+.dot-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  
+  .dot-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 8px);
+    gap: 6px;
+    transform: rotate(0);
+    /* margin-right: 15px; */
+    transition: transform 0.5s ease;
+  }
+  
+  .dot-menu.open {
+    grid-template-columns: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(45deg);
+  }
+  
+  .dot-menu.open .dot:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .dot-menu.open .dot:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .dot-menu.open .dot:nth-child(3) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .dot-menu.open .dot:nth-child(4) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .dot-menu.open .dot:nth-child(5) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .dot {
+    width: 7px;
+    height: 7px;
+    background-color: #2FC1FF;
+    border-radius: 50%;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  

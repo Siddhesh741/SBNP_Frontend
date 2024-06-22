@@ -1,0 +1,91 @@
+/* Gallery.css */
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.gallery-navigation {
+  position: relative;
+  width: 100%;
+}
+
+.transparent-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  /* z-index: 1; */
+}
+
+.transparent-arrow.prev {
+  left: 10px;
+  background-color: rgb(251, 251, 251);
+  /* background-image: url('left-arrow-icon.png'); Add your left arrow icon */
+  background-size: cover;
+  /* z-index: 1; */
+}
+
+.transparent-arrow.next {
+  right: 10px;
+  background-color: rgb(251, 251, 251);
+  /* background-image: url('right-arrow-icon.png'); Add your right arrow icon */
+  background-size: cover;
+}
+
+.gallery-container1 {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.gallery-item1 {
+  flex: 0 0 calc(33.33% - 20px);
+  margin: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+
+.gallery-item1:hover {
+  transform: scale(1.1);
+}
+
+.gallery-image1 {
+  width: 100%;
+  height: auto;
+  border-radius: 5%;
+}
+
+/* Responsive Styles */
+/* Gallery.css */
+
+/* Your existing CSS */
+
+@media (max-width: 768px) {
+  .gallery-container1 {
+    flex-wrap: wrap;
+    margin-right: 10px;
+    animation: slideFromLeft 5s linear infinite;
+  }
+  .gallery-image1 {
+    width: 100%;
+    height: auto;
+  }
+  .gallery-item1 {
+    flex: 0 0 100%; /* Full width in mobile view */
+  }
+  @keyframes slideFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}

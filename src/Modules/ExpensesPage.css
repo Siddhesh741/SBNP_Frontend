@@ -1,0 +1,222 @@
+.container {
+  background-color: #b19f9f;
+  padding: 5px;
+  margin: 20px auto;
+  max-width: 800px; /* Increase this value */
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  margin-bottom: 10px;
+}
+
+.input-group input[type="text"],
+.input-group select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.table-container {
+  background-color: #6599b1;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: scroll;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #9b8b94;
+  text-align: left;
+}
+
+th {
+  background-color: #d6be5d;
+}
+
+tr:nth-child(even) {
+  background-color: #95e3db;
+}
+
+tr:hover {
+  background-color: #b94949;
+}
+
+.submit-button {
+  background-color: #3d3da8;
+  color: #090202;
+  font-size: larger;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button {
+  padding: 10px 50px;
+
+  margin-right: 10px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5fd671;
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 667px) {
+  .input-group input[type="text"],
+  .input-group select {
+    width: 100%;
+    /* margin-right:3%; */
+  }
+
+  .submit-button {
+    width: 100%;
+    color: rgb(255, 8, 0);
+  }
+}
+/* Add styles for the category selection buttons */
+/* ItemPage.css */
+
+/* Category Selection Buttons */
+.category-selection {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.category-selection button {
+  background-color: #9f3da8;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.category-selection button:hover {
+  background-color: #202051;
+}
+
+/* Media query for responsive layout */
+@media (max-width: 768px) {
+  .category-selection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-selection button {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input[type="text"] {
+  flex: 1;
+  margin-right: 10px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.search-bar input[type="text"]::placeholder {
+  color: #999;
+}
+
+.search-bar button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar input[type="text"] {
+    margin-bottom: 10px;
+  }
+}
+
+/*Category totals*/
+.category-totals {
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  margin: 0 auto 20px auto; /* Center horizontally with margin */
+  text-align: center;
+}
+
+.category-totals div {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.category-totals div span {
+  display: inline-block;
+  width: 50%; /* Adjust as needed */
+  text-align: left;
+}
+/* Add this CSS to your ItemPage.css file */
+
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Align items with space between */
+}
+
+.back-button,
+.submit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.back-button {
+  background-color: #007bff; /* Back button background color */
+  color: #ffffff; /* Back button text color */
+}
+
+.submit-button {
+  margin-right: 5px;
+  background-color: #007bff; /* Submit button background color */
+  color: #fff; /* Submit button text color */
+}

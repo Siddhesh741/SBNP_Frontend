@@ -1,0 +1,191 @@
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+  gap: 50px; /* Adjust the gap between images */
+  padding: 20px;
+  background-image: url(../assets/img/bg1.jpg);
+  transition: transform 1s ease; /* Adjust transition speed */
+  background-color: #e7e7e7b3;
+}
+
+.image-container1 {
+  text-align: center;
+  position: relative;
+  animation: fadeInUp 2s ease forwards; /* Adjust animation speed */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container1:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px); /* Start from 100px below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at the original position */
+  }
+}
+.image-container1 img {
+  margin-top: 20px;
+  max-width: 70%;
+  height: auto;
+  border-radius: 5%;
+  transition: transform 0.3s ease;
+}
+
+.image-container1 img.zoomable:hover,
+.image-container1 img.zoomable:focus {
+  transform: scale(1.1); /* Adjust zoom level */
+}
+
+.image-container1 p {
+  margin: 10px 0;
+  font-family: 'Courier New', monospace; /* Change the font family to your desired font */
+  font-size: 22px; /* Change the font size if needed */
+  font-weight: bold; /* Change the font weight if needed */
+  color: #333;
+}
+#scroll-to-top {
+  display: none;
+}
+/* Oursets.css */
+
+/* Add this CSS for zoom effect */
+.zoomable {
+  transition: transform 0.3s ease;
+}
+
+.zoomable:hover,
+.zoomable:focus {
+  transform: scale(
+    1.05
+  ); /* You can adjust the scale value to control the zoom level */
+}
+
+.book-slot-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.book-slot-button {
+  /* Add your button styles here */
+  padding: 22px;
+  background-color: #2fc1ff;
+  color: #000000;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  margin-bottom: 40px;
+  transition: all 0.3s ease;
+}
+
+.book-slot-button:hover {
+  transform: scale(1.1);
+}
+
+.book-slot-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  margin-bottom: 20px;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.book-slot-button:hover::before {
+  width: 0;
+  height: 0;
+}
+
+.book-slot-button span {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px); /* Adjust initial position */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: 1fr; /* Single column layout for mobile */
+  }
+
+  .image-container1 img {
+    margin: 30px auto 20px; /* Center images horizontally and add top margin */
+    max-width: 80%; /* Adjust image width for smaller screens */
+    margin-bottom: 20px; /* Increase space between images */
+   
+  }
+  .book-slot-button {
+    /* Add your button styles here */
+    padding: 20px;
+    background-color: #2fc1ff;
+    color: #000000;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+  }
+  .image-container1 p {
+    font-size: 18px; /* Decrease font size for better readability */
+    color: #060606;
+    font-weight: 650;
+  }
+  #scroll-to-top {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+
+  .scroll-to-top-link {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 24px;
+    background-color: #2fc1ff;
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+  }
+
+  .scroll-to-top-link:hover {
+    background-color: #333;
+  }
+}

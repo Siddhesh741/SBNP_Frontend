@@ -1,0 +1,167 @@
+
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(242, 242, 242, 0.66); */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: background-image 3s ease-in-out;
+  text-align: center;
+  padding: 20px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 2rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.book-now-button {
+  background-color: #2FC1FF;
+  color: #000000;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.book-now-button:hover {
+  background-color: #b5b0b0;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  
+ animation: waterfall 3s ease forwards;
+}
+
+
+
+@keyframes waterfall {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-weight: bold;
+  font-size: 2.8rem;
+  font-family: "Playfair Display", serif;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.paragraph {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin: 10px 10;
+  max-width: 1000px;
+ 
+ 
+}
+.paragraph1 {
+margin-bottom: 40px;
+font-size: 1.5rem;
+color: #ffffff;
+}
+.para {
+  font-size: 1.2rem;
+  color: #2FC1FF;
+  font-style: italic;
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
+}
+
+.booking-id-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+  .content-container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .paragraph {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    margin-top:270px;
+  }
+
+  .para {
+    font-size: 1rem;
+    color: #000000;
+  }
+
+  .book-now-button {
+    font-size: 16px;
+    font-weight: 650;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+  }
+}
+
+/* Media query for tablet devices */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .content-container {
+    width: 80%;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .paragraph {
+    font-size: 1.3rem;
+  }
+
+  .para {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,64 @@
+.design-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("../assets/img/136.jpg"); /* background-image.jpg' */
+  background-size: cover;
+  background-position: center;
+}
+
+.video-background {
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: auto;
+  margin-top: 1vh; /* Add top margin */
+  margin-bottom: 1vh; /* Add bottom margin */
+  z-index: 0; /* Ensure the video is behind the overlay */
+  box-shadow: 0 30px 100px #2FC1FF; /* Add border shadow */
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
+
+.text-overlay h1 {
+  font-family: serif;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.text-overlay p {
+  font-size: 1.2em;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .design-container {
+    background-image: none; /* Remove background image on mobile views */
+  }
+  .video-background {
+    width: 90%;
+    margin: 0vh auto 20vh; /* Add equal margins on top and bottom, and center horizontally */
+  }
+}
+/* Media query for tablet devices */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .video-background {
+    width: 70%;
+    margin: 0vh auto 20vh; /* Add equal margins on top and bottom, and center horizontally */
+  }
+}

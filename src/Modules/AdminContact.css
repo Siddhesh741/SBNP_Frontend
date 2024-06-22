@@ -1,0 +1,244 @@
+/* ContactForm.css */
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12%;
+  
+    /* margin: 2%; */
+  }
+  .message {
+    
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+    /* background-color: #ffe5e5; */
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .form-container {
+    order: 1;
+    /* padding: 20px; */
+    background: linear-gradient(
+      to bottom right,
+      #95ba99,
+      #74c3c2
+    ); /* Example gradient colors */
+    padding: 20px;
+    border-radius: 2%;
+    margin-left: 2%;
+    margin-top: 2%;
+    box-shadow: 0 0 10px rgba(160, 157, 157, 0.1); /* Example shadow effect */
+  }
+  
+  .form-title {
+    text-align: center;
+    margin-left: 0%;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 1%;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    animation: waterdrop 2s ease-in-out infinite,
+      colorChange 3s infinite alternate;
+  }
+  .field-label {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-size: 16px; /* Adjust the font size as needed */
+    font-weight: bold;
+  }
+  
+  @keyframes waterdrop {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes colorChange {
+    0% {
+      color: #744040;
+    }
+    50% {
+      color: #144e5ff1; /* Change to the desired color */
+    }
+    100% {
+      color: #c83f84;
+    }
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+    font-size: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #ffe5e5;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .image-container {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0; /* Adjust top and bottom padding as needed */
+    position: relative; /* Added */
+    margin-right: 2%;
+    margin-top: 2%;
+    /* Adjust the border-radius value as needed */
+    /* background-image: url('../assets/img/49.jpg');*/
+    background-size: cover; /* Ensure the background image covers the entire container */
+  }
+  
+  /* Apply shadow by default and change color on hover */
+  .image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1%;
+    background-color: rgba(158, 200, 53, 0.236);
+    z-index: -1;
+    transition: background-color 0.3s ease;
+  }
+  
+  .image-container:hover::before {
+    background: linear-gradient(
+      to bottom left,
+      #b09bc8,
+      #598086
+    ); /* Shadow color on hover */
+  }
+  
+  .image-container img {
+    margin-top: 20%;
+    max-width: 70%;
+    max-height: 400px;
+    height: auto;
+    border-radius: 5%;
+  }
+  
+  .text-red-500 {
+    color: #dd061b; /* Red color */
+  }
+  .text-container {
+    font-size: 20px;
+  }
+  .link-button {
+    color: rgb(133, 54, 118);
+  }
+  
+
+  .close-button {
+    background-color: #f44336; /* Red color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  @media screen and (min-width: 680px) {
+    .contact-container {
+      flex-direction: row;
+      /* margin: 0; */
+      margin-left: 10px;
+    }
+  
+    .form-container {
+      order: 0;
+      flex: 1;
+  
+      margin-right: 20px; /* Add some spacing between the containers */
+      margin-bottom: 20px; /* Add bottom margin */
+    }
+    .form-title {
+      font-size: 20px;
+    }
+    .image-container {
+      order: 1;
+      flex: 1;
+      margin-bottom: 20px; /* Add bottom margin */
+    }
+  }
+  .text-container {
+    animation: waterEffect 3s infinite;
+    text-align: center;
+    font-size: larger;
+    line-height: 2;
+    margin-top: 5%;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    /* Adjust animation duration and timing */
+  }
+  
+  @media (max-width: 767px) {
+    /* Adjust the width for mobile devices */
+    #package {
+      width: 100%; /* Set to 100% width for mobile devices */
+    }
+  
+    .form-container,
+    .image-container {
+      margin: 2% 2% 2% 2%; /* Add margin for all sides, with more margin on the left side */
+    }
+  }
+  
+  @keyframes waterEffect {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .text-container {
+    font-size: 17px;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    #package {
+      width: 315px; /* Adjust this width as needed */
+    }
+    .image-container img {
+      margin-top: 70%;
+      max-width: 70%;
+      max-height: 400px;
+      height: auto;
+    }
+  }
+  

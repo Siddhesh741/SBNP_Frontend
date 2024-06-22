@@ -1,0 +1,232 @@
+.registration-pagee {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/img/bg1.jpg);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  z-index: 1000;
+}
+
+.registration-cont {
+  background-color: #fff9f9;
+  width: 90%; /* Increase width to be wider */
+  padding: 30px; /* Increase padding */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative; /* For close button positioning */
+}
+
+.registration-header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.input-field {
+  position: relative; /* Added position relative for input icons */
+  margin-bottom: 25px; /* Increase margin-bottom */
+  width: 100%;
+  border-color: #0c0b0b;
+}
+
+.input-field input,
+.input-field select {
+  width: 85%;
+  padding: 15px 15px 15px 50px; /* Increase padding for bigger fields */
+  font-size: 1rem; /* Increase font size */
+  border: 1px solid #0c0b0b;
+  border-radius: 5px;
+  outline: none;
+  transition: border 0.3s ease; /* Smooth transition for border on hover */
+}
+
+.input-field input::placeholder,
+.input-field select::placeholder {
+  font-size: 1rem; /* Increase placeholder font size */
+  color: #4a4a4a; /* Placeholder color */
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px; /* Adjust left position */
+  transform: translateY(-50%);
+  color: #252323;
+  font-size: 1.2rem; /* Increase icon size */
+}
+
+.input-field input:hover,
+.input-field select:hover {
+  border-color: #007bff; /* Change border color on hover */
+}
+
+.input-field input:focus,
+.input-field select:focus {
+  border-color: #007bff; /* Change border color on focus */
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-button,
+.close-button {
+  padding: 12px 25px; /* Increase padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem; /* Increase font size */
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.close-button {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.registration-header .close-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+/* UserRegistrationPage.css */
+.input-field {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.password-toggle {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+}
+.registration-cont {
+  float: left;
+  width: 30%;
+  margin-left: 200px;
+  margin-bottom: 50px;
+  padding-right: 20px; /* Adjust padding as needed */
+}
+.user-table-heading {
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase; /* Convert text to uppercase */
+  color: #333; /* Example color */
+  font-size: 24px; /* Example font size */
+  /* Add any additional styling you want for attractiveness */
+}
+
+.user-table-container {
+  float: right;
+  width: 40%;
+  margin-right: 0px;
+  margin-left: 150px;
+  position: relative;
+}
+
+.user-table-heading {
+  text-align: center;
+}
+
+.user-table {
+  margin-bottom: 20px; /* Add margin at the bottom */
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Clearfix to prevent container overlap */
+.registration-cont::after,
+.user-table-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.loading {
+  text-align: center;
+}
+/*  */
+@media (max-width: 767px) {
+  .registration-cont {
+    margin: 0 auto; /* Center horizontally */
+    width: 90%; /* Adjust width as needed */
+    padding: 10px; /* Adjust padding as needed */
+  }
+  .user-table-heading {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase; /* Convert text to uppercase */
+    color: #333; /* Example color */
+    font-size: 21px; /* Example font size */
+    /* Add any additional styling you want for attractiveness */
+  }
+
+  .registration-pagee {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .input-field input,
+  .input-field select {
+    width: 80%;
+    padding: 15px 15px 15px 50px; /* Increase padding for bigger fields */
+    font-size: 1rem; /* Increase font size */
+    border: 1px solid #0c0b0b;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s ease; /* Smooth transition for border on hover */
+  }
+  .input-field {
+    position: relative; /* Added position relative for input icons */
+    margin-bottom: 25px; /* Increase margin-bottom */
+    width: 95%;
+    border-color: #0c0b0b;
+  }
+
+  .user-table-container {
+    /* float: center; */
+    width: 95%;
+    position: relative;
+    margin-left: 0px;
+  }
+  .user-table {
+    position: relative;
+    top: auto;
+    left: auto;
+    font-size: 14px;
+    transform: none;
+    margin: 0px auto; /* Center horizontally */
+    width: 100% auto;
+    overflow-x: auto;
+  }
+}

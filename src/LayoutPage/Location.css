@@ -1,0 +1,133 @@
+/* Location.css */
+.location-details {
+  font-family: 'Arial', sans-serif;
+}
+
+.location-box {
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+
+  display: inline-block;
+  margin-top: 6px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 8px #2FC1FF;
+}
+
+.location-text strong {
+  font-size: 20px;
+}
+
+.location-details h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-details h2 span {
+  margin: 0 10px;
+}
+
+
+/* Styles for video container */
+.video-container1 {
+  display: flex;
+  justify-content: center; /* Align the videos with space between them */
+  /* background-color: #2FC1FF;  */
+  background-image: url(../assets/img/bg1.jpg);
+  padding: 30px; /* Allow the videos to wrap to the next line if needed */
+}
+
+.video-container1 video {
+  width: 100%; /* Adjust the width of each video, considering margins */
+  height: 350px; /* Add some space between videos */
+  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+  object-fit: contain; /* Ensure the video covers the entire container */
+  /* Set background color for the video container */
+}
+
+.video-container1 video:hover {
+  transform: scale(1.1); /* Zoom in effect on hover */
+}
+
+.video-left {
+  animation: slideFromLeft 1s ease-in-out;
+}
+
+.video-right {
+  animation: slideFromRight 1s ease-in-out;
+}
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+.highlight-box {
+  display: inline-block;
+  padding: 2px 5px;
+  border: 1px solid black;
+  border-radius: 4px; /* Optional: to make the box corners rounded */
+  transition: background-color 0.3s ease;
+}
+
+.highlight-box:hover {
+  background-color: #e0e0e0; /* Optional: change the background color on hover */
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+
+  .location-box {
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: inline-block;
+    margin-top: 6px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 8px #2FC1FF;
+  }
+  .video-container1 {
+    flex-direction: column;
+    align-items: center;
+    height:60%;
+  }
+
+  .video-container1 video {
+    width: 100%;
+   
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .video-container1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-container1 video {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,163 @@
+/* TermsConditions.css */
+
+.terms-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin: 20px; */
+  min-height: 80vh;
+  background-image: url("../assets/img/bg1.jpg"); /* Replace 'your-background-image.jpg' with your image path */
+  background-size: cover; /* Ensure the background image covers the entire container */
+}
+
+.features-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  flex-grow: 1;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.centered-image {
+  animation: slideInFromLeft 1s ease-out; /* Adjust the duration and timing function as needed */
+}
+
+.centered-image {
+  text-align: center;
+}
+
+.centered-img {
+  max-width: 60%;
+  height: auto;
+  border-radius: 10px;
+  margin: 5% auto; /* Center horizontally with auto left and right margins */
+  box-shadow: 0 30px 100px rgba(100, 205, 212, 0.947); /* Add border shadow */
+}
+
+.features-text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Apply the wave animation to the .about-title */
+.features-title1 {
+  margin-top: 20px;
+  color: #2FC1FF;
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  animation: wave 2s ease-in-out infinite; /* Adjust the animation duration and timing function as needed */
+}
+
+/* Apply water drop animation to all paragraphs */
+.feature-description p {
+  animation: waterDrop 4s ease infinite; /* Adjust animation duration */
+}
+
+.terms-details {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column; /* Align items vertically */
+  height: 100vh; /* Take full viewport height */
+}
+
+.feature {
+  display: flex;
+  gap: 15px;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center horizontally */
+}
+
+.feature-description {
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Center text horizontally */
+  text-align: center;
+}
+
+.feature-description p {
+  color: #333; /* Darken the text color */
+  font-size: 20px; /* Increase the font size */
+  font-family: Arial, sans-serif;
+  margin: 10px 0; /* Add some margin for spacing */
+}
+
+.feature-title2 {
+  font-size: 2.3em; /* Increase the font size */
+  text-align: center; /* Move the title to the center */
+  color: #2FC1FF;
+  font-weight: 750;
+  margin-bottom: 20px; /* Add some margin below the title */
+}
+
+
+
+/* Media query for mobile view */
+@media screen and (max-width: 768px) {
+  .terms-container {
+    padding: 10px; /* Add some padding for better spacing */
+  }
+
+  .features-content {
+    max-width: 100%;
+    padding: 0 10px;
+    text-align: center; /* Center text */
+  }
+
+  .centered-img {
+    max-width: 80%; /* Adjust image size for mobile view */
+  }
+
+  .feature-text {
+    text-align: center;
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+
+  .terms-details {
+    height: auto; /* Allow the height to adjust based on content */
+    padding: 20px; /* Add some padding for better spacing */
+  }
+
+  .feature-description p {
+    margin-right: 30px;
+    margin-bottom: 0px;
+    font-size: 18px; /* Slightly reduce font size for better readability */
+  }
+
+  .feature-title2 {
+    margin-right: 8%;
+    font-size: 1.4em; /* Slightly reduce font size for better readability */
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .feature-description p {
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 25px; /* Decrease font size for mobile view */
+  }
+}

@@ -1,0 +1,117 @@
+.container {
+  background-color: rgb(186, 182, 182);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center align all text within the container */
+}
+
+.heading {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.input-container {
+  display: inline-block; /* Ensure elements are displayed in line */
+  margin-bottom: 10px;
+  width: 100%; /* Occupy full width of container */
+}
+
+.input-container label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+  font-size: larger;
+}
+
+.input-container input,
+.input-container select,
+.input-container textarea {
+  width: calc(100% - 20px); /* Subtract the margin to occupy full width */
+  padding: 10px;
+  border: 2px solid #e3a9de;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.input-container input:focus,
+.input-container select:focus,
+.input-container textarea:focus {
+  outline: none;
+  border-color: #9e3523;
+}
+
+.input-container input:hover,
+.input-container select:hover,
+.input-container textarea:hover {
+  border-color: #1c4eb2;
+}
+
+.result-container {
+  margin-bottom: 20px;
+}
+
+#comment {
+  width: 100%;
+  border: 2px solid #e3a9de;
+  transition: border-color 0.3s ease;
+}
+
+.container {
+  text-align: center;
+}
+
+table {
+  margin: auto;
+}
+
+.payment-buttons-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-buttons-container button {
+  margin-bottom: 10px; /* Adjust the amount of vertical space between buttons */
+}
+
+/* Media Queries for responsiveness */
+@media only screen and (max-width: 767px) {
+  .container {
+    padding: 10px; /* Reduced padding for smaller screens */
+    margin: 10px auto; /* Adjust margin for smaller screens */
+    max-width: 90%; /* Ensure the container does not exceed screen width */
+  }
+  
+  .heading {
+    margin-bottom: 15px;
+    font-size: 9px; /* Adjusted font size for smaller screens */
+    width: 90%;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .input-container input,
+  .input-container select,
+  .input-container textarea {
+    width: calc(100% - 20px); /* Adjust width for smaller screens */
+    padding: 8px; /* Reduced padding for smaller screens */
+  }
+  
+  .input-container {
+    margin-bottom: 15px; /* Increased margin-bottom for better spacing */
+  }
+  
+  .payment-buttons-container {
+    flex-direction: column;
+  }
+  
+  .payment-buttons-container button {
+    margin-bottom: 10px; /* Ensure space between buttons */
+    width: 100%; /* Make buttons full width */
+  }
+}

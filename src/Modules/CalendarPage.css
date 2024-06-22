@@ -1,0 +1,213 @@
+.calendar-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+  margin-bottom: 40px;
+  background-color: #d6d6d6;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+  background-size: cover;
+  background-image:url(../assets/img/bg1.jpg);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.calendar-page h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  background: linear-gradient(90deg, #d2502f, #feb47b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.year-selector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.year-selector label {
+  margin-right: 10px;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+  color: #444;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #2FC1FF;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.year-selector label:hover {
+  background-color: #d2502f;
+  color: #222;
+}
+
+.year-selector select {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #d2502f;
+}
+
+.months-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.month {
+  width: 90px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2FC1FF;
+  color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.month:hover,
+.month.selected {
+  background-color: #043e7c;
+  transform: scale(1.05);
+}
+
+.month-number {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.month-name {
+  font-size: 1em;
+}
+
+.dates-container {
+  text-align: center;
+}
+
+.date-category {
+  margin-bottom: 20px;
+}
+
+.dates-container h2 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  background: linear-gradient(90deg, #b709f0, #feb47b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dates-container h2:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.date-category h3 {
+  margin-bottom: 10px;
+  color: #555;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #a79595;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+.no-dates {
+  color: red;
+  font-weight: bold; /* Optional: Make the text bold */
+}
+
+.dates {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.date {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #28a745;
+  color: white;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  transition: background-color 0.3;
+}
+.date:hover {
+  background-color: #122316;
+  transform: scale(1.1);
+}
+/* Existing CSS code */
+
+/* Add media query for mobile devices */
+@media only screen and (max-width: 768px) {
+    .calendar-page {
+      padding: 10px;
+      max-width: 100%;
+      border-radius: 0;
+    }
+  
+    .months-container {
+      gap: 5px;
+    }
+  
+    .month {
+      width: calc(33.33% - 10px); /* Adjust width for better display on small screens */
+      height: 100px; /* Adjust height as needed */
+      font-size: 0.8em; /* Decrease font size for better fit */
+    }
+  
+    .month-number {
+      font-size: 1.5em; /* Adjust font size for better fit */
+    }
+    .month-name {
+      font-size: 1.3em;
+    }
+    .dates-container h2 {
+      font-size: 1.5em; /* Decrease font size for better fit */
+    }
+  
+    .date {
+      width: 40px; /* Adjust width for better display on small screens */
+      height: 40px; /* Adjust height for better display on small screens */
+      font-size: 0.8em; /* Decrease font size for better fit */
+    }
+  }
+  

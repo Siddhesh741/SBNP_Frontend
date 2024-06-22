@@ -1,0 +1,129 @@
+.confirmation-dialog-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
+    animation: fadeIn 0.3s ease-in-out; /* Apply fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.confirmation-dialog {
+    background-color: #fff;
+    padding: 20px;
+    height: 20%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: zoomIn 0.3s ease-in-out; /* Apply zoom-in animation */
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.1);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Rest of your CSS styles remain unchanged */
+
+
+.confirmation-dialog-message {
+    margin-bottom: 30px;
+    margin-top: 10px;
+    font-size: larger;
+}
+
+.confirmation-dialog-message p {
+    margin: 0;
+}
+
+.confirmation-dialog-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.confirmation-dialog-buttons button {
+    margin-left: 10px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* after Deleted client row then show this popup */
+.success-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(0, 0, 0); /* White background */
+    color: #ecffec; /* Green text color */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Ensure it's above other elements */
+}
+
+
+/* Additional CSS styles */
+
+.confirmation-dialog-buttons .cancel-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.confirmation-dialog-buttons .cancel-button:hover {
+    background-color: #db4436; /* Darker red on hover */
+}
+
+.confirmation-dialog-buttons .confirm-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.confirmation-dialog-buttons .confirm-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+@media screen and (max-width: 768px) {
+    .confirmation-dialog {
+        background-color: #fff;
+        padding: 20px;
+        height: 25%;
+        margin-left: 20px;
+        margin-right: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .confirmation-dialog-message {
+        margin-bottom: 30px;
+        margin-top: 10px;
+        font-size: larger;
+    }
+    .success-message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(0, 0, 0); /* White background */
+        color: #ecffec; /* Green text color */
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        z-index: 9999; /* Ensure it's above other elements */
+    }
+
+}
