@@ -30,4 +30,14 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  
+  /* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+  .popup-content h2 {
+    margin-bottom: 12px;
+  }
+  .popup-content {
+    width: 90%; /* Adjust the width for smaller screens */
+    margin: 0 15%; /* Centering with margin */
+    box-sizing: border-box;
+  }
+}

@@ -54,7 +54,7 @@ const Review = () => {
 
         <div className="review-card">
           <h3>
-            <span className="bold-name">ANANT JAGATP</span>
+            <span className="bold-name">ANANT JAGTAP</span>
           </h3>
           <div className="rating">
             <span>RATING:</span>

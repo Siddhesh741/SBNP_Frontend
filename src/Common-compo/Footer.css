@@ -25,6 +25,7 @@
   width: calc(100% /1); /* Adjust the width to fit three lines horizontally */
   margin-left: 5px;
   font-size: 1.1em;
+  font-family:cursive;
   text-align: justify;
   margin-right: 200px;
 }
@@ -33,7 +34,7 @@
 .footer-links1 {
   /* padding-left: 2px; */
   display: flex;
-  /* margin-right: 500px; */
+  font-family:cursive;
   margin-top: 15px;
   flex-direction: column;
   margin-right: 300px; 
@@ -45,6 +46,7 @@
 .footer-links {
   display: flex;
   font-size: 1.1em;
+  font-family:cursive;
   margin-top: 15px;
   flex-direction: column;
   gap: 4px; /* Add vertical gap between links */
@@ -82,6 +84,7 @@
 
 .footer-copyright p {
   margin: 0;
+  font-family:cursive;
 }
 
 .icon {

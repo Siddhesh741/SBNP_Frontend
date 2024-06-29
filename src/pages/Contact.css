@@ -4,7 +4,20 @@
   display: flex;
   flex-direction: column;
   border-radius: 12%;
+  animation: waterfall 3s ease forwards;
 }
+
+@keyframes waterfall {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .message {
   color: red;
   font-weight: bold;
@@ -15,7 +28,6 @@
 
 .form-container {
   order: 1;
-  /* background: linear-gradient(to bottom right, #95ba99, #74c3c2); */
   padding: 20px;
   border-radius: 2%;
   margin-left: 2%;
@@ -27,8 +39,7 @@
 .form-title1 {
   text-align: center;
   margin-left: 0%;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin-bottom: 10px;
   font-size: 28px;
   margin-top: 0%;
@@ -137,6 +148,9 @@
 }
 .text-container1 {
   font-size: 20px;
+  padding: 30px;
+  text-align: justify;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .contact-container {
@@ -148,7 +162,6 @@
 .form-container {
   order: 0;
   flex: 1;
-
   margin-right: 20px; /* Add some spacing between the containers */
   margin-bottom: 20px; /* Add bottom margin */
 }
@@ -161,6 +174,15 @@
 
 .link-button1 {
   color: #427c8a;
+}
+.email-suggestion1,.email-suggestion2 {
+  background-color: #f0f0f0;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+}
+.email-suggestion1,.email-suggestion2:hover {
+  background-color: #e0e0e0;
 }
 
 @media (max-width: 767px) {

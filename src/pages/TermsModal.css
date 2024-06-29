@@ -58,9 +58,11 @@
   border: 2px solid blue;
   border-radius: 10px;
   padding: 10px;
+  text-align: justify;
   height: 310px; /* Reduced height */
   overflow-y: hidden;
 }
+
 
 .terms-containerr ul li {
   font-size: large;
@@ -94,6 +96,7 @@
     border: 2px solid blue;
     border-radius: 10px;
     padding: 10px;
+    text-align: justify;
     height: 410px; /* Reduced height */
     overflow-y: hidden;
   }

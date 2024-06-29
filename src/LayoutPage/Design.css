@@ -29,6 +29,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   transform: translate(-50%, -50%);
   text-align: center;
   color: #fff;
@@ -38,11 +39,13 @@
 .text-overlay h1 {
   font-family: serif;
   font-size: 2.5em;
+  
   font-weight: bold;
 }
 
 .text-overlay p {
   font-size: 1.2em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 /* Media query for mobile devices */

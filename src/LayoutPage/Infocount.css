@@ -20,6 +20,7 @@
   font-size: 24px; /* Adjust size as needed */
   color: rgb(0, 0, 0);
   font-weight: 450;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 /* Media query for mobile devices */
 @media (max-width: 768px) {

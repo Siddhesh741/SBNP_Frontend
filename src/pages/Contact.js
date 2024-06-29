@@ -10,7 +10,9 @@ const Contact = () => {
     clientName: "",
     phoneNumber: "",
     photographerName: "",
+    clientEmail: "",
     photographerPhoneNo: "",
+    photographerEmail: "",
     selectDate: "",
     cityName: "",
     selectedOption: "",
@@ -28,7 +30,9 @@ const Contact = () => {
     clientName: "",
     phoneNumber: "",
     photographerName: "",
+    clientEmail: "",
     photographerPhoneNo: "",
+    photographerEmail: "",
     selectDate: "",
     cityName: "",
     selectedOption: "",
@@ -45,6 +49,10 @@ const Contact = () => {
   const [errorMessage, setErrorMessage] = useState(""); // State variable for error message
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showCashCollectedByField, setShowCashCollectedByField] =
+    useState(false);
+  const [suggestion1, setSuggestion1] = useState("");
+  const [suggestion2, setSuggestion2] = useState("");
 
   //Client Name -
   const handleInputChange = (e) => {
@@ -88,6 +96,39 @@ const Contact = () => {
     }
   };
 
+  //Validate for client email
+  const handleEmail2 = (e) => {
+    const { name, value } = e.target;
+
+    setFormData({ ...formData, [name]: value }); // Update form data state first
+
+    // Email suggestion logic
+    if (name === "clientEmail") {
+      const commonDomains = ["gmail.com", "yahoo.com", "outlook.com"];
+      const emailParts = value.split("@");
+      if (emailParts.length === 2 && emailParts[1] === "") {
+        setSuggestion2(emailParts[0] + "@" + commonDomains[0]);
+      } else if (emailParts.length === 2 && emailParts[1]) {
+        const domainPart = emailParts[1];
+        const match = commonDomains.find((domain) =>
+          domain.startsWith(domainPart)
+        );
+        if (match) {
+          setSuggestion2(emailParts[0] + "@" + match);
+        } else {
+          setSuggestion2("");
+        }
+      } else {
+        setSuggestion2("");
+      }
+    }
+  };
+
+  const handleSuggestionClick2 = () => {
+    setFormData({ ...formData, clientEmail: suggestion2 });
+    setSuggestion2("");
+  };
+
   //Photographer Name
   const handleInputChange1 = (e) => {
     const { name, value } = e.target;
@@ -128,6 +169,39 @@ const Contact = () => {
           "Phone number should only contain digits and be up to 10 characters.",
       });
     }
+  };
+
+  //Validate for photographer email
+  const handleEmail1 = (e) => {
+    const { name, value } = e.target;
+
+    setFormData({ ...formData, [name]: value }); // Update form data state first
+
+    // Email suggestion logic
+    if (name === "photographerEmail") {
+      const commonDomains = ["gmail.com", "yahoo.com", "outlook.com"];
+      const emailParts = value.split("@");
+      if (emailParts.length === 2 && emailParts[1] === "") {
+        setSuggestion1(emailParts[0] + "@" + commonDomains[0]);
+      } else if (emailParts.length === 2 && emailParts[1]) {
+        const domainPart = emailParts[1];
+        const match = commonDomains.find((domain) =>
+          domain.startsWith(domainPart)
+        );
+        if (match) {
+          setSuggestion1(emailParts[0] + "@" + match);
+        } else {
+          setSuggestion1("");
+        }
+      } else {
+        setSuggestion1("");
+      }
+    }
+  };
+
+  const handleSuggestionClick1 = () => {
+    setFormData({ ...formData, photographerEmail: suggestion1 });
+    setSuggestion1("");
   };
 
   //Date
@@ -281,14 +355,8 @@ const Contact = () => {
 
   //payment mode
 
-  const [showCashCollectedByField, setShowCashCollectedByField] =
-    React.useState(false);
-
   const handlePaymentModeChange = (e) => {
     const value = e.target.value;
-
-    //   console.log('Selected Payment Mode:', value);
-    // console.log('Previous Data:', formData);
 
     setFormData((prevData) => ({
       ...prevData,
@@ -326,8 +394,10 @@ const Contact = () => {
     const requiredFields = [
       "clientName",
       "phoneNumber",
+      "clientEmail",
       "photographerName",
       "photographerPhoneNo",
+      "photographerEmail",
       "selectDate",
       "cityName",
       "selectedOption",
@@ -335,8 +405,10 @@ const Contact = () => {
       "pendingAmount",
       "visitorsCount",
       "paymentMode",
-      "cashcollectedby",
     ];
+    if (formData.paymentMode === "cash") {
+      requiredFields.push("cashcollectedby");
+    }
 
     const missingFields = requiredFields.filter((field) => !formData[field]);
 
@@ -369,6 +441,7 @@ const Contact = () => {
           setIsSubmitted(true);
           setFormData(initialFormData);
           setErrorMessage("");
+
           console.log("Congratulations! Form submitted!");
         }
       } else {
@@ -439,6 +512,35 @@ const Contact = () => {
           </div>
 
           <div className="form-group mb-4">
+            <label htmlFor="email" className="field-label">
+              Customer Email<span className="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              name="clientEmail"
+              id="clientEmail"
+              placeholder="Enter Client email"
+              value={formData.clientEmail}
+              onChange={handleEmail2}
+              required
+              style={{ height: "22px", width: "calc(98% - 5px)" }}
+            />
+            {errors.clientEmail && (
+              <span className="text-red-500">{errors.clientEmail}</span>
+            )}
+            {suggestion2 && (
+              <div
+                className="email-suggestion2"
+                onClick={handleSuggestionClick2}
+                style={{ cursor: "pointer", color: "blue" }}
+              >
+                {suggestion2}
+              </div>
+            )}
+          </div>
+
+
+          <div className="form-group mb-4">
             <label htmlFor="photographerName" className="field-label">
               Photographer Name<span className="text-red-500">*</span>
             </label>
@@ -480,6 +582,34 @@ const Contact = () => {
           </div>
 
           <div className="form-group mb-4">
+            <label htmlFor="email" className="field-label">
+              Photographer Email<span className="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              name="photographerEmail"
+              id="photographerEmail"
+              placeholder="Enter Photographer email"
+              value={formData.photographerEmail}
+              onChange={handleEmail1}
+              required
+              style={{ height: "22px", width: "calc(98% - 5px)" }}
+            />
+            {errors.photographerEmail && (
+              <span className="text-red-500">{errors.photographerEmail}</span>
+            )}
+            {suggestion1 && (
+              <div
+                className="email-suggestion1"
+                onClick={handleSuggestionClick1}
+                style={{ cursor: "pointer", color: "blue" }}
+              >
+                {suggestion1}
+              </div>
+            )}
+          </div>
+
+          <div className="form-group mb-4">
             <label htmlFor="datePicker" className="field-label">
               Photo shoot Date
               <span className="text-red-500" style={{ fontSize: "1.2em" }}>
@@ -511,14 +641,12 @@ const Contact = () => {
               style={{ height: "30px", width: "calc(100% - 5px)" }}
             >
               <option value="" disabled selected>
-                Please Select
+                Please Select Package
               </option>
               <option value="Instagram">Instagram</option>
               <option value="Photographer">Photographer</option>
               <option value="Whatsapp">Whatsapp</option>
-              <option value="Relatives or friends">
-                 Relatives or Friends
-              </option>
+              <option value="Relatives or friends">Relatives or Friends</option>
               <option value="Other">Other</option>
             </select>
             {errors.knowaboutlocation && (
@@ -638,6 +766,7 @@ const Contact = () => {
               <span className="text-red-500">{errors.visitorsCount}</span>
             )}
           </div>
+
           <div>
             <div
               className="form-group mb-4"
@@ -681,7 +810,6 @@ const Contact = () => {
                 >
                   Online
                 </label>
-
                 <input
                   type="radio"
                   id="cash"

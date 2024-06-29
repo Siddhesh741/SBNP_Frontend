@@ -9,7 +9,9 @@
 .review-title {
   color: rgb(1, 1, 1);
   font-size: 25px;
-  font-weight: 500;
+  font-weight: 900;
+  font-family: serif;
+ 
 }
 
 .review-cards {
@@ -22,6 +24,7 @@
 
 .bold-name {
   font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .review-card {
@@ -36,6 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .stars {
@@ -61,14 +65,16 @@
 
 .expanded {
   overflow: visible;
-  font-size: 18px;
+  font-size: 17px;
   text-align: justify;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .collapsed {
   overflow: hidden;
-  font-size: 18px;
+  font-size: 17px;
   text-align: justify;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   max-height: 100px; /* Adjust the maximum height as needed */
 }
 

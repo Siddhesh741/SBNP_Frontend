@@ -1,35 +1,31 @@
-// Admin.js
-
 import React, { useState, useEffect } from "react";
 import Footer from "../Common-compo/Footer";
-import "./Admin.css"; // Import CSS for styling (create this file)
+import "./Admin.css";
 import BookingTable from "./BookingTable";
-import ExpensesPage from "./ExpensesPage"; // Import the ExpensesPage component
-import FoodPage from "./FoodPage"; // Import the FoodPage component
+import ExpensesPage from "./ExpensesPage";
+import FoodPage from "./FoodPage";
 import SettlementPage from "./SettlementPage";
 import InventoryPage from "./InventoryPage";
-import CalendarPage from "./CalendarPage";
+import CalendarPage, { engagementDates, weddingDates } from "./CalendarPage";
 import ReportPage from "./ReportPage";
-import { FaSignOutAlt } from "react-icons/fa";
-import UserRegistrationPage from "./UserRegistrationPage"; // Import the UserRegistrationPage component
+import { FaSignOutAlt, FaEye, FaEyeSlash } from "react-icons/fa";
+import UserRegistrationPage from "./UserRegistrationPage";
+import { getTodayEvents } from "./dateUtils";
+import PopupNotification from "./PopupNotification";
 
 function Admin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [error, setError] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
   const [loggedInAdmin, setLoggedInAdmin] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [users, setUsers] = useState([]);
-
-  /* const validCredentials = [
-    { username: "", password: "", name: "Admin" },
-    
-  ]; */
-
+  const [showPopup, setShowPopup] = useState(false);
+  const [todayEvents, setTodayEvents] = useState({ todayEngagementDates: [], todayWeddingDates: [] });
 
   useEffect(() => {
-    // Fetch users from backend
     const fetchUsers = async () => {
       try {
         const response = await fetch("http://localhost:8080/api/users");
@@ -56,11 +52,16 @@ function Admin() {
         },
         body: JSON.stringify({ userId: username, password }),
       });
-
+  
       if (response.ok) {
         const user = await response.json();
         setLoggedIn(true);
         setLoggedInAdmin(user.fullName);
+  
+        // Check for today's events
+        const events = getTodayEvents(engagementDates, weddingDates);
+        setTodayEvents(events);
+        setShowPopup(true); // Always show the popup
       } else {
         setError("Invalid username or password");
       }
@@ -69,15 +70,19 @@ function Admin() {
       setError("An error occurred. Please try again.");
     }
   };
+  
 
   const handleLogout = () => {
-    // Implement logout logic here
     setLoggedIn(false);
     setLoggedInAdmin("");
   };
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
+  };
+
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
   };
 
   return (
@@ -99,70 +104,54 @@ function Admin() {
             <div className="category-buttons">
               <button
                 onClick={() => handleCategorySelect("BookingTable")}
-                className={`category-button ${
-                  selectedCategory === "BookingTable" ? "active" : ""
-                }`}
+                className={`category-button ${selectedCategory === "BookingTable" ? "active" : ""}`}
               >
                 Customer Booking
               </button>
               <button
                 onClick={() => handleCategorySelect("UserRegistration")}
-                className={`category-button ${
-                  selectedCategory === "UserRegistration" ? "active" : ""
-                }`}
+                className={`category-button ${selectedCategory === "UserRegistration" ? "active" : ""}`}
               >
                 User Registration
               </button>
               <button
                 onClick={() => handleCategorySelect("Expenses")}
-                className={`category-button ${
-                  selectedCategory === "Expenses" ? "active" : ""
-                }`}
+                className={`category-button ${selectedCategory === "Expenses" ? "active" : ""}`}
               >
                 Expenses
               </button>
               <button
                 onClick={() => handleCategorySelect("Settlement")}
-                className={`category-button ${
-                  selectedCategory === "Settlement" ? "active" : ""
-                }`}
+                className={`category-button ${selectedCategory === "Settlement" ? "active" : ""}`}
               >
                 Settlement
               </button>
               <button
                 onClick={() => handleCategorySelect("Food")}
-                className={`category-button ${
-                  selectedCategory === "Food" ? "active" : ""
-                }`}
+                className={`category-button ${selectedCategory === "Food" ? "active" : ""}`}
               >
                 Food
               </button>
               <button
                 onClick={() => handleCategorySelect("Inventory")}
-                className={`category-button ${
-                  selectedCategory === "Inventory" ? "active" : ""
-                }`}
+                className={`category-button ${selectedCategory === "Inventory" ? "active" : ""}`}
               >
                 Inventory
               </button>
               <button
                 onClick={() => handleCategorySelect("Calendar")}
-                className={`category-button ${
-                  selectedCategory === "Calendar" ? "active" : ""
-                }`}
+                className={`category-button ${selectedCategory === "Calendar" ? "active" : ""}`}
               >
                 Calendar
               </button>
               <button
                 onClick={() => handleCategorySelect("Report")}
-                className={`category-button ${
-                  selectedCategory === "Report" ? "active" : ""
-                }`}
+                className={`category-button ${selectedCategory === "Report" ? "active" : ""}`}
               >
                 Report
               </button>
             </div>
-            <div className="hide-on-mobile"  style={{ height: "400px" }}></div>
+            <div className="hide-on-mobile" style={{ height: "320px" }}></div>
           </div>
           {selectedCategory === "BookingTable" && <BookingTable />}
           {selectedCategory === "UserRegistration" && <UserRegistrationPage />}
@@ -172,32 +161,39 @@ function Admin() {
           {selectedCategory === "Inventory" && <InventoryPage />}
           {selectedCategory === "Calendar" && <CalendarPage />}
           {selectedCategory === "Report" && <ReportPage />}
-          {/* Add more conditions for other categories */}
+
+          {/* Temporary button to test popup */}
+          {/* <button onClick={() => setShowPopup(true)}>Show Popup</button> */}
         </div>
       ) : (
         <div className="admin-login-wrapper">
-          {" "}
-          {/* Wrapper for centering */}
           <div className="admin-login-container">
             <h2>Login</h2>
             <input
               type="text"
-              placeholder="Username"
+              placeholder="Enter Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
             {error && <div className="error-mess">{error}</div>}
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <div className="password-container">
+              <input
+                type={isPasswordVisible ? "text" : "password"}
+                placeholder="Enter Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <span onClick={togglePasswordVisibility} className="password-toggle-icon">
+                {isPasswordVisible ? <FaEye /> : <FaEyeSlash />}
+              </span>
+            </div>
             {error && <div className="error-mess">{error}</div>}
             <button onClick={handleLogin}>Login</button>
           </div>
-          {/* <img src={admin} alt="Admin" className="admin"/> */}
         </div>
+      )}
+      {showPopup && (
+        <PopupNotification todayEvents={todayEvents} onClose={() => setShowPopup(false)} />
       )}
       <Footer />
     </div>

@@ -78,7 +78,10 @@ table {
 .payment-buttons-container button {
   margin-bottom: 10px; /* Adjust the amount of vertical space between buttons */
 }
-
+.message-text {
+  font-size: 22px; /* Increased font size */
+  font-weight: bold; /* Optional: Make the text bold */
+}
 /* Media Queries for responsiveness */
 @media only screen and (max-width: 767px) {
   .container {
@@ -88,9 +91,10 @@ table {
   }
   
   .heading {
-    margin-bottom: 15px;
+    margin-bottom: 22px;
     font-size: 9px; /* Adjusted font size for smaller screens */
-    width: 90%;
+    width: 100%;
+    font-size: 20px;
     text-align: center;
     justify-content: center;
   }
@@ -113,5 +117,9 @@ table {
   .payment-buttons-container button {
     margin-bottom: 10px; /* Ensure space between buttons */
     width: 100%; /* Make buttons full width */
+  }
+  .message-text {
+    font-size: 15px; /* Increased font size */
+    font-weight: bold; /* Optional: Make the text bold */
   }
 }

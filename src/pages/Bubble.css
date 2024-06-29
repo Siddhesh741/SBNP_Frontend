@@ -1,16 +1,13 @@
-/* Bubble.css */
-
 .big-bubble-container {
   position: relative;
   width: 850px; /* Adjust width of the container */
-  height: 700px; /* Adjust height of the container */
+  height: 400px; /* Adjust height of the container */
   border: 2px solid #ccc; /* Add border for visual clarity */
   border-radius: 10px; /* Add border radius for rounded corners */
   background-color: #2FC1FF; /* Change container background color */
   display: flex;
   justify-content: center;
   align-items: center;
-
   overflow: hidden; /* Prevent bubbles from going outside the container */
 }
 
@@ -23,188 +20,112 @@
   height: 150px; /* Adjust size of the big bubble */
   border-radius: 50%;
   background-color: #f1f1f1; /* Change bubble background color */
-  color: #000000; /* Change font color */
-  font-size: 20px; /* Adjust font size */
+  color: #ff0000; /* Change font color */
+  font-size: 18px; /* Adjust font size */
+  font-family: serif;
+  animation: move-up-down 3s infinite ease-in-out;
+  box-shadow: 0 4px 8px rgb(255, 3, 3); /* Add border shadow */
+  transition: transform 0.3s ease-in-out;
+}
+
+.big-bubble:hover {
+  transform: scale(1.1); /* Slightly enlarge the bubble on hover */
+  box-shadow: 0 8px 16px rgba(255, 3, 3, 0.5); /* Enhance shadow on hover */
 }
 
 .big-bubble span {
   text-align: center; /* Center the text horizontally */
+  padding: 10px; /* Add padding to the text */
+  font-weight: bold; /* Make the text bold */
 }
 
+/* Positions for the bubbles in a zigzag pattern */
 .big-bubble-1 {
-  animation: bubble-move-1 10s infinite alternate;
+  top: 50px;
+  left: 75px;
 }
 
 .big-bubble-2 {
-  animation: bubble-move-2 10s infinite alternate;
+  top: 50px;
+  left: 295px;
 }
 
 .big-bubble-3 {
-  animation: bubble-move-3 10s infinite alternate;
+  top: 50px;
+  left: 520px;
 }
 
 .big-bubble-4 {
-  animation: bubble-move-4 10s infinite alternate;
+  top: 200px;
+  left: 180px;
 }
+
 .big-bubble-5 {
-  animation: bubble-move-5 10s infinite alternate;
+  top: 200px;
+  left: 400px;
 }
 
-.big-bubble-7 {
-  animation: bubble-move-7 10s infinite alternate;
+.big-bubble-6 {
+  top: 200px;
+  left: 630px;
 }
 
-@keyframes bubble-move-1 {
-  0% {
-    transform: translate(0, 0);
+@keyframes move-up-down {
+  0%, 100% {
+    transform: translateY(0);
   }
-  20% {
-    transform: translate(50px, 50px); /* Adjust movement distance */
-  }
-  40% {
-    transform: translate(0, 0);
-  }
-  60% {
-    transform: translate(-50px, -50px); /* Adjust movement distance */
-  }
-  80% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(0, 0);
+  50% {
+    transform: translateY(-10px); /* Adjust movement distance */
   }
 }
 
-@keyframes bubble-move-2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  20% {
-    transform: translate(-80px, 80px); /* Adjust movement distance */
-  }
-  40% {
-    transform: translate(0, 0);
-  }
-  60% {
-    transform: translate(80px, -80px); /* Adjust movement distance */
-  }
-  80% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes bubble-move-3 {
-  0% {
-    transform: translate(0, 0);
-  }
-  20% {
-    transform: translate(80px, -80px); /* Adjust movement distance */
-  }
-  40% {
-    transform: translate(0, 0);
-  }
-  60% {
-    transform: translate(-80px, 80px); /* Adjust movement distance */
-  }
-  80% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes bubble-move-4 {
-  0% {
-    transform: translate(0, 0);
-  }
-  20% {
-    transform: translate(-80px, -80px); /* Adjust movement distance */
-  }
-  40% {
-    transform: translate(0, 0);
-  }
-  60% {
-    transform: translate(80px, 80px); /* Adjust movement distance */
-  }
-  80% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes bubble-move-5 {
-  0% {
-    transform: translate(0, 0);
-  }
-  20% {
-    transform: translate(-50px, -50px); /* Adjust movement distance */
-  }
-  40% {
-    transform: translate(0, 0);
-  }
-  60% {
-    transform: translate(50px, 50px); /* Adjust movement distance */
-  }
-  80% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes bubble-move-7 {
-  0% {
-    transform: translate(0, 0);
-  }
-  20% {
-    transform: translate(-50px, -50px); /* Adjust movement distance */
-  }
-  40% {
-    transform: translate(0, 0);
-  }
-  60% {
-    transform: translate(50px, 50px); /* Adjust movement distance */
-  }
-  80% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
 @media only screen and (max-width: 768px) {
   .big-bubble-container {
-    margin-top: 20px;
     width: 90%; /* Adjust width of the container for mobile */
     max-width: 400px; /* Set maximum width to prevent container from becoming too wide */
-    height: 500px; /* Allow height to adjust based on content */
+    height: 600px; /* Allow height to adjust based on content */
     margin: 0 auto; /* Center the container horizontally */
     padding: 10px; /* Add padding for spacing */
     display: flex;
-    margin-right: 25px;
     justify-content: center;
     align-items: center;
   }
 
   .big-bubble {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 100px; /* Adjust size of the big bubble for mobile */
     height: 100px; /* Adjust size of the big bubble for mobile */
-    font-size: 16px; /* Adjust font size for mobile */
+    font-size: 13px; /* Adjust font size for mobile */
   }
 
-  .big-bubble-1,
-  .big-bubble-2,
-  .big-bubble-3,
-  .big-bubble-4,
-  .big-bubble-5,
-  .big-bubble-7 {
-    animation-duration: 20s; /* Adjust animation duration for mobile */
+  /* Adjust positions for mobile view */
+  .big-bubble-1 {
+    top: 30px;
+    left: 70px;
+  }
+
+  .big-bubble-2 {
+    top: 125px;
+    left: 150px;
+  }
+
+  .big-bubble-3 {
+    top: 220px;
+    left: 70px;
+  }
+
+  .big-bubble-4 {
+    top: 310px;
+    left: 150px;
+  }
+
+  .big-bubble-5 {
+    top: 410px;
+    left: 70px;
+  }
+
+  .big-bubble-6 {
+    top: 510px;
+    left: 150px;
   }
 }

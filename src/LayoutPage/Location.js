@@ -73,6 +73,7 @@ function Location() {
             marginBottom: "10px",
             color: "#2FC1FF",
             marginTop: "20px",
+            fontFamily:"serif",
           }}
         >
           <span role="img" aria-label="location-pin">
@@ -85,7 +86,7 @@ function Location() {
         </h2>
         <div className="location-box inline-block mx-auto p-4 border-2 border-gray-300 rounded-lg shadow-lg">
           <p
-            style={{ fontSize: "18px", lineHeight: "1.6" }}
+            style={{ fontSize: "18px", lineHeight: "1.6" ,fontFamily:"initial"}}
             className="location-text"
           >
             <strong>
@@ -122,7 +123,7 @@ function Location() {
       <br />
       <div className="instagram-link">
         <p
-          style={{ fontSize: "22px", fontWeight: "bold", marginBottom: "10px" }}
+          style={{ fontSize: "22px", fontWeight: "bold", marginBottom: "10px",fontFamily: "serif" }}
         >
           Watch more videos & photos on Instagram click..
           <a

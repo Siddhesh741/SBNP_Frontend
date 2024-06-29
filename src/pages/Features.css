@@ -111,7 +111,7 @@ body {
 
 .features-title {
   margin-top: 30px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: serif;
   font-size: 2rem;
   font-weight: bold;
   line-height: 1.5;
@@ -156,6 +156,7 @@ body {
   align-items: center;
   opacity: 0;
   transform: translateX(50%);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   animation: slideIn 1s forwards;
   animation-delay: 0.5s;
 }
@@ -187,6 +188,7 @@ body {
 .feature-text {
   flex: 1;
   text-align: left;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .feature-title {
@@ -197,6 +199,7 @@ body {
 .feature-description {
   font-size: 20px;
   text-align: justify;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   width: 90%;
   margin: 0;
 }
@@ -228,7 +231,13 @@ body {
   .features-content {
     padding: 0 15px;
   }
-
+  .feature-title {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
   .features-title {
     margin-top: 20px;
     font-size: 1.8rem;

@@ -15,11 +15,11 @@
 }
 
 .headingg {
-  font-family: 'Arial', sans-serif;
+  font-family:serif;
   font-size: 2rem;
   color: #fff;
   background-color: #2FC1FF;
-  padding: 10px 20px;
+  padding: 2px 10px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   text-align: center;
@@ -27,6 +27,18 @@
   letter-spacing: 1.5px;
   display: inline-flex;
   align-items: center;
+  animation: waterfall 3s ease forwards;
+}
+
+@keyframes waterfall {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .heading span {
@@ -71,15 +83,14 @@
   margin-bottom: 10px;
   margin-top: 10px;
   color: #000000e3;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: serif;
 }
 
 .destination-description {
   font-size: 1.3rem;
   margin-bottom: 15px;
   text-align: justify;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  color: #1d211a;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 @keyframes riseUp {

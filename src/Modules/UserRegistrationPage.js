@@ -9,7 +9,12 @@ const UserRegistrationPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState('');
- 
+  const [errors, setErrors] = useState({});
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+
+  
   const [fullName, setFullName] = useState('');
   const [mobile, setMobile] = useState('');
   const [userId, setUserId] = useState('');
@@ -29,9 +34,7 @@ const UserRegistrationPage = () => {
   });
   
   
-  const [errors, setErrors] = useState({});
-  const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {          //Fetch all users data from backend
     const fetchUsers = async () => {
@@ -58,22 +61,19 @@ const UserRegistrationPage = () => {
   
   const handleDeleteUser = async (id) => {
     try {
-      // Call delete API endpoint with user id
-      const response = await fetch(`http://localhost:8080/api/users/deleteUser/${id}`, { method: 'DELETE' });
-      if (response.ok) {
-        // If deletion is successful, update users state excluding the deleted user
-        setUsers(users.filter(user => user.id !== id));
-        // Show success message
-        setPopupMessage('User deleted successfully.');
-        setShowPopup(true);
-      } else {
-        console.error('Failed to delete user:', response.statusText);
-      }
+        const response = await fetch(`http://localhost:8080/api/users/${id}`, { method: 'DELETE' });
+        if (response.ok) {
+            setUsers(users.filter(user => user.id !== id));
+            setPopupMessage('User deleted successfully.');
+            setShowPopup(true);
+        } else {
+            console.error('Failed to delete user:', response.statusText);
+        }
     } catch (error) {
-      console.error('Error deleting user:', error);
+        console.error('Error deleting user:', error);
     }
-  };
-  
+};
+
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
@@ -408,41 +408,41 @@ const UserRegistrationPage = () => {
   <div className="user-table-container">
   <h2 className="user-table-heading">User Table</h2>
   <div className="user-table">
-    {loading ? (
-      <div className='loading'>Loading...</div>
-    ) : (
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Action</th> {/* New column for delete action */}
-            <th>Full Name</th>
-            <th>Mobile</th>
-            <th>User ID</th>
-            <th>Password</th>
-            <th>User Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentUsers.map(user => (
-            <tr key={user.id}>
-              
-              <td>{user.id}</td>
-              <td>
-                      {/* Delete icon with onClick event to prompt user for deletion */}
-                      <FaTrash onClick={() => handleDeleteUser(user.id)} className="delete-icon" />
-                    </td>
-              <td>{user.fullName}</td>
-              <td>{user.mobile}</td>
-              <td>{user.userId}</td>
-              <td>{user.password}</td>
-              <td>{user.userType}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    )}
-  </div>
+            {loading ? (
+                <div className='loading'>Loading...</div>
+            ) : (
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Action</th>
+                            <th>Full Name</th>
+                            <th>Mobile</th>
+                            <th>User ID</th>
+                            <th>Password</th>
+                            <th>User Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {users.map(user => (
+                            <tr key={user.id}>
+                                <td>{user.id}</td>
+                                <td>
+                                    <FaTrash onClick={() => handleDeleteUser(user.id)} className="delete-icon" />
+                                </td>
+                                <td>{user.fullName}</td>
+                                <td>{user.mobile}</td>
+                                <td>{user.userId}</td>
+                                <td>{user.password}</td>
+                                <td>{user.userType}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            )}
+            {showPopup && <div className="popup">{popupMessage}</div>}
+        </div>
+    
   
   {/* Pagination buttons */}
   <div class="pagination">

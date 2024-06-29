@@ -14,9 +14,9 @@
 .registration-cont {
   background-color: #fff9f9;
   width: 90%; /* Increase width to be wider */
-  padding: 30px; /* Increase padding */
+  padding: 10px; /* Increase padding */
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
   position: relative; /* For close button positioning */
 }
 
